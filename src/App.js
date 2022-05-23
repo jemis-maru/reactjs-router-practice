@@ -1,16 +1,21 @@
 import { Route, Routes } from 'react-router-dom';
-import AllMeetups from './AllMeetups.js';
-import NewMeetup from './NewMeetup.js';
-import Favourites from './Favourites.js';
+import TheNavbar from './components/TheNavbar.js';
+import AllMeetups from './components/AllMeetups.js';
+import NewMeetup from './components/NewMeetup.js';
+import Favourites from './components/Favourites.js';
+import './App.css';
 
 function App() {
   return (
     <div>
-      <Routes>
-        <Route path="/" element={<AllMeetups />} />
-        <Route path="/newMeetup" element={<NewMeetup />} />
-        <Route path="/favourites" element={<Favourites />} />
-      </Routes>
+      <TheNavbar />
+      <div className="mainClass">
+        <Routes>
+          <Route path="/" element={<AllMeetups />} />
+          <Route path="/newMeetup" element={<NewMeetup />} />
+          <Route path="/favourites" element={<Favourites />} />
+        </Routes>
+      </div>
     </div>
   );
 }
